@@ -19,6 +19,7 @@ kiwisolver==1.4.4
 MarkupSafe==2.1.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
+nbformat>=4.2.0
 numpy>1.23.3
 packaging==21.3
 pandas>1.4.4

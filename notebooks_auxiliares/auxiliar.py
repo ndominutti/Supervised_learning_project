@@ -253,7 +253,9 @@ def threshold_optimization(
     return results, top_threshold
 
 
-def guardar_errores(nombre_modelo: str, errores: np.array,path="../data/error_analysis.csv") -> None:
+def guardar_errores(
+    nombre_modelo: str, errores: np.array, path="../data/error_analysis.csv"
+) -> None:
     """Función para generar .csv que permita trackear los errores de los modelos.
 
     Args:
@@ -278,7 +280,9 @@ def guardar_errores(nombre_modelo: str, errores: np.array,path="../data/error_an
     df.to_csv(path, index=False)
 
 
-def guardar_aciertos(nombre_modelo: str, aciertos: np.array, path="../data/aciertos_analysis.csv") -> None:
+def guardar_aciertos(
+    nombre_modelo: str, aciertos: np.array, path="../data/aciertos_analysis.csv"
+) -> None:
     """Función para generar .csv que permita trackear los aciertos de los modelos.
 
     Args:
@@ -303,7 +307,9 @@ def guardar_aciertos(nombre_modelo: str, aciertos: np.array, path="../data/acier
     df.to_csv(path, index=False)
 
 
-def guardar_metricas(nombre_modelo: str, y_test, y_hat, path="../data/comparacion_modelos.csv") -> None:
+def guardar_metricas(
+    nombre_modelo: str, y_test, y_hat, path="../data/comparacion_modelos.csv"
+) -> None:
     """Función para generar .csv que permita trackear las métricas de los modelos.
 
     Args:
@@ -340,7 +346,7 @@ def guardar_metricas(nombre_modelo: str, y_test, y_hat, path="../data/comparacio
 
 
 def discretizacion_recomendacion(probabilidad: float, top_threshold: float) -> str:
-    """Discretiza en cuatro categorias que tan probable es que la recomendacion sea mas confiable segun su probabilidad
+    """Discretiza en cinco categorias que tan probable es que la recomendacion sea mas confiable segun su probabilidad
 
     Args:
         row (float): probabilidad de que esa cancion le guste al usuario
