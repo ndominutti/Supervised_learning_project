@@ -1,3 +1,8 @@
+"""
+Modulo que contiene todas las funciones/clases auxiliares utilizadas en el trabajo práctico,
+las mismas abarcan desde feature engineering hasta post-procesado y ploteo de resultados.
+"""
+
 import pandas as pd
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -5,6 +10,7 @@ from sklearn.metrics import recall_score, fbeta_score, precision_score, confusio
 from typing import Union
 import matplotlib.pyplot as plt
 import seaborn as sns
+import IPython
 
 
 class AuxTargetEncoding(BaseEstimator, TransformerMixin):
@@ -367,7 +373,14 @@ def discretizacion_recomendacion(probabilidad: float, top_threshold: float) -> s
         return "NO RECOMENDABLE"
 
 
-def plot_matriz_confusion(y_test, y_hat, title):
+def plot_matriz_confusion(y_test: np.array, y_hat: np.array, title: str) -> None:
+    """plotea una matriz de confución estilizada.
+
+    Args:
+        y_test (np.array): array con los valores de test
+        y_hat (np.array): array con los valores de train
+        title (str): título del gráfico.
+    """
     plt.figure(figsize=(8, 5))
     sns.heatmap(
         confusion_matrix(y_test, y_hat),
@@ -379,3 +392,24 @@ def plot_matriz_confusion(y_test, y_hat, title):
     plt.ylabel("VALORES REALES")
     plt.title(title)
     plt.show()
+
+
+def configure_plotly_browser_state() -> None:
+    """Código necesario para plotear plotly3D en google colab.
+    El mismo debe ser corrido en cada celda donde se ejecute un fig.show()
+    """
+    display(
+        IPython.core.display.HTML(
+            """
+        <script src="/static/components/requirejs/require.js"></script>
+        <script>
+          requirejs.config({
+            paths: {
+              base: '/static/base',
+              plotly: 'https://cdn.plot.ly/plotly-latest.min.js?noext',
+            },
+          });
+        </script>
+        """
+        )
+    )
