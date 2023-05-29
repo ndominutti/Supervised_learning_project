@@ -1,13 +1,13 @@
-## Maestría en Data Science - Trabajo práctico Final - Aprendizaje supervisado - UdeSA
+## MSc in Data Science - Universidad de San Andrés - Supervised learning final project
 
-El presente es un repositorio con fines educativos. Dentro del mismo se encuentra:
+This is a repository for educational purposes. Here you will find:
 
-* notebook principal: TP_AprendizajeSupervisado.ipynb (link de colab https://colab.research.google.com/github/ndominutti/TP_supervised_learning/blob/main/TP_AprendizajeSupervisado.ipynb)
-* config.yaml: archivo que contiene un random state único compartido por todos los modelos y procesos que utilizen algún componente estocástico
-* /data/: acá se encuentran todos los csv utilizados para el TP, desde la data original hasta el maestro de comparación de modelos
-* /env/: virtualenv utilizado para desarrollar el presente TP
-* /models/: pickles de las mejores versiones de los modelos experimentados
-* /notebooks_auxiliares/: notebooks de experimentación en los modelos y módulo auxiliar.py, utilizado durante todo el trabajo práctico
+* main notebook: TP_AprendizajeSupervisado.ipynb (link to colab https://colab.research.google.com/github/ndominutti/TP_supervised_learning/blob/main/TP_AprendizajeSupervisado.ipynb)
+* config.yaml: used to set a shared random state for all the experiments
+* /data/: data directory
+* /env/: project's virtualenv 
+* /models/: best model's versions pickle files
+* /notebooks_auxiliares/: experiment's notebooks & auxiliar modules
 
 
 
